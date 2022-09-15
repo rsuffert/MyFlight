@@ -1,6 +1,6 @@
 package pucrs.myflight.modelo;
 
-public class Aeronave implements Contavel {
+public class Aeronave {
 	private String codigo;
 	private String descricao;
 
@@ -8,9 +8,9 @@ public class Aeronave implements Contavel {
 	static {
 		qtdCriada = 0;
 	}
-
-	@Override // implementação do método da interface (faria mais sentido ser static?)
-	public int getQtdCriada() {
+	
+	// MÉTODO QUE DEVERIA SER IMPLEMENTADO NA INTERFACE
+	public static int getQtdCriada() {
 		return qtdCriada;
 	}
 	
