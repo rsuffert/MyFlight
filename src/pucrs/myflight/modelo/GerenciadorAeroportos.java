@@ -1,6 +1,7 @@
 package pucrs.myflight.modelo;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class GerenciadorAeroportos {
     private ArrayList<Aeroporto> aeroportos;
@@ -37,9 +38,17 @@ public class GerenciadorAeroportos {
         String s = "";
 
         for (Aeroporto a : aeroportos) {
-            s += String.format("Código: %s | Nome: %s | Localização: LAT %d ; LON %d.\n", a.getCodigo(), a.getNome(), a.getLocal().getLatitude(), a.getLocal().getLongitude());
+            s += String.format("Código: %s | Nome: %s | Localização: LAT %f ; LON %f.\n", a.getCodigo(), a.getNome(), a.getLocal().getLatitude(), a.getLocal().getLongitude());
         }
 
         return s;
     } 
+
+    public void ordenarPorNome() {
+        Collections.sort(aeroportos);
+    }
+
+    public void ordenarPorCodigo() {
+        Collections.sort(aeroportos, Aeroporto.getComparatorCodigo());
+    }
 }

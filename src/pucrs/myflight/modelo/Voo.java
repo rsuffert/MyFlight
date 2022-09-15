@@ -16,7 +16,14 @@ public class Voo {
 		this.rota = rota;
 		this.datahora = datahora;
 		this.duracao = duracao;
-		this.status = Status.CONFIRMADO; // default é confirmado
+		this.status = Status.CONFIRMADO; // default é CONFIRMADO
+	}
+
+	public Voo(Rota rota, Duration duracao) {
+		this.rota = rota;
+		this.datahora = LocalDateTime.of(2016, 8, 12, 12, 00);
+		this.duracao = duracao;
+		this.status = Status.CONFIRMADO; // default é CONFIRMADO
 	}
 	
 	public Rota getRota() {
@@ -37,5 +44,20 @@ public class Voo {
 	
 	public void setStatus(Status novo) {
 		this.status = novo;
+	}
+
+	public String toString () {
+
+		String data = String.format("%d/%d/%d", datahora.getDayOfMonth(), datahora.getMonthValue(), datahora.getYear());
+		String horario = String.format("%d:%s", datahora.getHour(), datahora.getMinute() == 0? "00" : datahora.getMinute()+"");
+
+		// COMPANHIA | STATUS | DATA/HORA | ORIGEM --> DESTINO
+		StringBuilder sb = new StringBuilder();
+		sb.append(rota.getCia().getNome() + " | "); // nome da companhia
+		sb.append(status.toString() + " | "); // status do voo
+		sb.append(data + " às " + horario + " | "); // data/hora do voo
+		sb.append(rota.getOrigem().getCodigo() + " --> " + rota.getDestino().getCodigo());
+
+		return sb.toString();
 	}
 }
