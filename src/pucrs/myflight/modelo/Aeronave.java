@@ -1,6 +1,6 @@
 package pucrs.myflight.modelo;
 
-public class Aeronave {
+public class Aeronave implements Contavel {
 	private String codigo;
 	private String descricao;
 
@@ -10,7 +10,8 @@ public class Aeronave {
 	}
 	
 	// MÉTODO QUE DEVERIA SER IMPLEMENTADO NA INTERFACE
-	public static int getQtdCriada() {
+	@Override
+	public int getQtdCriada() {
 		return qtdCriada;
 	}
 	
