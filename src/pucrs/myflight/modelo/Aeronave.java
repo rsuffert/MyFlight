@@ -8,8 +8,8 @@ public class Aeronave implements Contavel {
 	static {
 		qtdCriada = 0;
 	}
-	
-	// MÉTODO QUE DEVERIA SER IMPLEMENTADO NA INTERFACE
+
+	// Método da interface
 	@Override
 	public int getQtdCriada() {
 		return qtdCriada;
