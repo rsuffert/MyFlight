@@ -41,8 +41,26 @@ public class VooEscalas extends Voo {
         return this.rotas;
     }
 
+    /**
+     * return primeira rota da lista de rotas
+     */
     @Override
     public Rota getRota() {
         return rotas.get(0);
+    }
+
+    @Override
+    public String toString () {
+        StringBuilder sb = new StringBuilder();
+
+        sb.append(rotas.get(0).getOrigem().getCodigo());
+        for (Rota r : rotas) {
+            sb.append(" --> ");
+            sb.append(r.getDestino().getCodigo());
+        }
+
+        sb.append(" | " + super.toString());
+
+        return sb.toString();
     }
 }

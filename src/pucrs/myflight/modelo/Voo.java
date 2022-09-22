@@ -41,8 +41,8 @@ public abstract class Voo {
 		String horario = String.format("%d:%s", datahora.getHour(), datahora.getMinute() == 0? "00" : datahora.getMinute()+"");
 
 		StringBuilder sb = new StringBuilder();
-		sb.append(status.toString() + " | "); // status do voo
 		sb.append(data + " às " + horario + " | "); // data/hora do voo
+		sb.append(status.toString()); // status do voo
 
 		return sb.toString();
 	}

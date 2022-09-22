@@ -20,7 +20,8 @@ public class App {
         Rota rr = new Rota(c1, guarulhos, londres, a1);
         Voo v = new VooDireto(dataVoo, rr);
         Duration duracaoI = v.getDuracao();
-        System.out.println("Duração voo GRU - LHR (min): " + duracaoI.toMinutes());
+        System.out.println(v);
+        System.out.println("\tDuração voo(min): " + duracaoI.toMinutes());
 
         LocalDateTime dataVoo2 = LocalDateTime.now();
         Rota rr2 = new Rota(c1, londres, guarulhos, a1);
@@ -31,6 +32,7 @@ public class App {
             ve.adicionarRota(rr2);
         }
         Duration duracaoII = v2.getDuracao();
-        System.out.println("Duração voo GRU - LHR - GRU (min): " + duracaoII.toMinutes());
+        System.out.println(v2);
+        System.out.println("\tDuração voo (min): " + duracaoII.toMinutes());
     }
 }

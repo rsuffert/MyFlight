@@ -33,4 +33,12 @@ public class VooDireto extends Voo {
     public Rota getRota() {
         return this.rota;
     }
+
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(rota.getOrigem().getCodigo() + " --> " + rota.getDestino().getCodigo() + " | ");
+        sb.append(super.toString());
+
+        return sb.toString();
+    }
 }
