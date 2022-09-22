@@ -28,10 +28,6 @@ public class MyFlight {
         rotas.inserir(new Rota(cia, origem, destino, aeronave));
     }
 
-    public void criarVoo (Rota rota, LocalDateTime datahora, Duration duracao) {
-        voos.inserir(new Voo(rota, datahora, duracao));
-    }
-
     public Aeronave localizarAeronave (String codigo) {
         return aeronaves.pesquisar(codigo);
     }

@@ -1,5 +1,5 @@
 package pucrs.myflight.modelo;
-
+/*
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -28,3 +28,4 @@ public class VooVariasEscalas extends Voo {
         return sb.toString();
     }
 }
+*/
