@@ -34,7 +34,7 @@ public class VooEscalas extends Voo {
         int duracaoHoras = (int) Math.floor(duracaoHorasMinutos);
         int duracaoMinutos = (int) ((duracaoHorasMinutos - duracaoHoras) * SEGUNDOS_EM_UM_MINUTO);
 
-        return Duration.ofHours(duracaoHoras).plusMinutes(duracaoMinutos+TEMPO_MINUTOS_DECOLAGEM_POUSO);
+        return Duration.ofHours(duracaoHoras).plusMinutes(duracaoMinutos).plusMinutes(TEMPO_MINUTOS_DECOLAGEM_POUSO * rotas.size());
     }
 
     public List<Rota> getRotas () {
