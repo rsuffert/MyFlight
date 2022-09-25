@@ -22,6 +22,7 @@ public class VooEscalas extends Voo {
         final int SEGUNDOS_EM_UM_MINUTO = 60;
         final int VELOCIDADE_MEDIA_JATO = 805;
         final int TEMPO_MINUTOS_DECOLAGEM_POUSO = 30;
+        final int NUMERO_DE_ESCALAS = rotas.size();
         
         double distanciaKm = 0.0;
         for (Rota r : rotas) {
@@ -34,7 +35,7 @@ public class VooEscalas extends Voo {
         int duracaoHoras = (int) Math.floor(duracaoHorasMinutos);
         int duracaoMinutos = (int) ((duracaoHorasMinutos - duracaoHoras) * SEGUNDOS_EM_UM_MINUTO);
 
-        return Duration.ofHours(duracaoHoras).plusMinutes(duracaoMinutos).plusMinutes(TEMPO_MINUTOS_DECOLAGEM_POUSO * rotas.size());
+        return Duration.ofHours(duracaoHoras).plusMinutes(duracaoMinutos).plusMinutes(TEMPO_MINUTOS_DECOLAGEM_POUSO * NUMERO_DE_ESCALAS);
     }
 
     public List<Rota> getRotas () {
